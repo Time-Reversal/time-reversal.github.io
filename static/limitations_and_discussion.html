@@ -1,0 +1,240 @@
+<html>
+
+<head>
+  <script type="text/javascript" language="javascript"
+    src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+  <script type="text/javascript" language="javascript"
+    src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+  <script type="text/javascript" language="javascript"
+    src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.colVis.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+
+  <link
+    href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+  </link>
+  <style>
+    .plotly-graph-div {
+      margin: auto;
+    }
+
+    table {
+      background-color: white;
+      color: white;
+    }
+
+    table.dataTable.compact tbody th,
+    table.dataTable.compact tbody td {
+      padding: 4px;
+      background-color: white;
+    }
+
+    .dataTables_wrapper .dataTables_length,
+    .dataTables_wrapper .dataTables_filter,
+    .dataTables_wrapper .dataTables_info,
+    .dataTables_wrapper .dataTables_processing,
+    .dataTables_wrapper .dataTables_paginate {
+      color: #fff;
+    }
+
+    table.dataTable.cell-border tbody th,
+    table.dataTable.cell-border tbody td {
+      border-top: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+      border-bottom: 1px solid white;
+    }
+
+    table.dataTable thead th,
+    table.dataTable thead td {
+      border-bottom: 1px solid #fff;
+    }
+
+    table.dataTable thead th,
+    table.dataTable thead td {
+      padding: 10px 18px;
+      border-bottom: 1px solid #fff;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+      box-sizing: border-box;
+      display: inline-block;
+      min-width: 1.5em;
+      padding: 0.5em 1em;
+      margin-left: 2px;
+      text-align: center;
+      text-decoration: none !important;
+      cursor: pointer;
+      *cursor: hand;
+      color: #fff !important;
+      border: 1px solid transparent;
+      border-radius: 2px;
+    }
+  </style>
+
+</head>
+
+<body bgcolor='white'>
+  <hr>
+  <div
+    style="text-align:center;font-family: 'Google Sans', sans-serif; font-size:30px;color:black;">
+    Explorative Inbetweening of Time and Space <br> Limitations and discussion
+  </div><br>
+  <div
+    style="text-align:center; font-family: 'Google Sans', sans-serif; font-size:20px;color:black;">
+    <a href="../index.html"><u>Back to project page</u></a>
+  </div>
+  <table id="myTable" class="cell-border compact stripe">
+    <thead style="font-family: 'Google Sans', sans-serif; color: black;">
+      <tr>
+        <th>ID</th>
+        <th>Bounded frames</th>
+        <th>Ours</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <div style="text-align:center;color:black;">0 <br> Failures on common
+            sense and physics: <br> the lightning staying static defies nature's
+            dynamics.</a>
+        </td>
+        <td><img src="./data/limitation/gif/city_pexels-frank-cone-2258536.jpg"
+            rel:animated_src="./data/limitation/gif/city_pexels-frank-cone-2258536.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/limitation/ours/city_pexels-frank-cone-2258536.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="text-align:center;color:black;">1 <br> Failures on common
+            sense and physics <br> the wheels move in a physically implausible
+            way.</a>
+        </td>
+        <td><img
+            src="./data/limitation/gif/wheels_pexels-miguel-a-padrinan-3785927.jpg"
+            rel:animated_src="./data/limitation/gif/wheels_pexels-miguel-a-padrinan-3785927.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/limitation/ours/wheels_pexels-miguel-a-padrinan-3785927.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="text-align:center;color:black;">2 <br> Failures on common
+            sense and physics: <br> flags should not wave on the moon.</a>
+        </td>
+        <td><img
+            src="./data/limitation/gif/wind_edu_srch_celebrate_the_50th_anniversary_apollo11.jpg"
+            rel:animated_src="./data/limitation/gif/wind_edu_srch_celebrate_the_50th_anniversary_apollo11.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/limitation/ours/wind_edu_srch_celebrate_the_50th_anniversary_apollo11.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="text-align:center;color:black;">3 <br> Failures on
+            preserving fine structures.</a>
+        </td>
+        <td><img src="./data/limitation/gif/Macon_clip1_00120_00000.gif"
+            rel:animated_src="./data/limitation/gif/Macon_clip1_00120_00000.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source src="./data/limitation/ours/Macon_clip1_00120_00000.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="text-align:center;color:black;">4 <br> Failures on
+            preserving fine structures.</a>
+        </td>
+        <td><img src="./data/limitation/gif/playroom_DSC05586_DSC05587.gif"
+            rel:animated_src="./data/limitation/gif/playroom_DSC05586_DSC05587.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source src="./data/limitation/ours/playroom_DSC05586_DSC05587.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="text-align:center;color:black;">5 <br>
+            Fusing failure.</a>
+        </td>
+        <td><img src="./data/limitation/gif/drjohnson_6304_6302.gif"
+            rel:animated_src="./data/limitation/gif/drjohnson_6304_6302.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source src="./data/limitation/ours/drjohnson_6304_6302.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="text-align:center;color:black;">6 <br> Fusing failure on
+            body movements.</a>
+        </td>
+        <td><img src="./data/limitation/gif/Trevor_clip2_00150_00105.gif"
+            rel:animated_src="./data/limitation/gif/Trevor_clip2_00150_00105.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source src="./data/limitation/ours/Trevor_clip2_00150_00105.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="text-align:center;color:black;">7 <br> Fusing failure on
+            body movements.</a>
+        </td>
+        <td><img src="./data/limitation/gif/roger_clip1_00000_00201.gif"
+            rel:animated_src="./data/limitation/gif/roger_clip1_00000_00201.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source src="./data/limitation/ours/roger_clip1_00000_00201.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="text-align:center;color:black;">8 <br> Mismatch on motion
+            ID.</a>
+        </td>
+        <td><img src="./data/limitation/gif/squat_clip4_00000_00044.gif"
+            rel:animated_src="./data/limitation/gif/roger_clip1_00000_00201.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source src="./data/limitation/ours/squat_clip4_00000_00044.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+
+    </tbody>
+  </table>
+
+</body>
+
+
+</html>

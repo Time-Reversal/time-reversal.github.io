@@ -1,0 +1,313 @@
+<html>
+
+<head>
+  <script type="text/javascript" language="javascript"
+    src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+  <script type="text/javascript" language="javascript"
+    src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+  <script type="text/javascript" language="javascript"
+    src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.colVis.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+
+  <link
+    href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+  </link>
+  <style>
+    .plotly-graph-div {
+      margin: auto;
+    }
+
+    table {
+      background-color: white;
+      color: white;
+    }
+
+    table.dataTable.compact tbody th,
+    table.dataTable.compact tbody td {
+      padding: 4px;
+      background-color: white;
+    }
+
+    .dataTables_wrapper .dataTables_length,
+    .dataTables_wrapper .dataTables_filter,
+    .dataTables_wrapper .dataTables_info,
+    .dataTables_wrapper .dataTables_processing,
+    .dataTables_wrapper .dataTables_paginate {
+      color: #000;
+    }
+
+    table.dataTable.cell-border tbody th,
+    table.dataTable.cell-border tbody td {
+      border-top: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+      border-bottom: 1px solid #fff;
+    }
+
+    table.dataTable thead th,
+    table.dataTable thead td {
+      border-bottom: 1px solid #fff;
+    }
+
+    table.dataTable thead th,
+    table.dataTable thead td {
+      padding: 10px 18px;
+      border-bottom: 1px solid #fff;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+      box-sizing: border-box;
+      display: inline-block;
+      min-width: 1.5em;
+      padding: 0.5em 1em;
+      margin-left: 2px;
+      text-align: center;
+      text-decoration: none !important;
+      cursor: pointer;
+      *cursor: hand;
+      color: #000 !important;
+      border: 1px solid transparent;
+      border-radius: 2px;
+    }
+  </style>
+
+</head>
+
+<body bgcolor='white'>
+  <hr>
+  <div
+    style="text-align:center;font-family: 'Google Sans', sans-serif; font-size:30px;color:black;">
+    Explorative Inbetweening of Time and Space <br> Baseline comparison on view
+    bound (camera motion generation)
+  </div>
+  <br>
+  <div
+    style="text-align:center; font-family: 'Google Sans', sans-serif; font-size:20px;color:black;">
+    *Note: Du et al. only runs on square images. Therefore the inputs to
+    their method are cropped and results are stretched back to the original
+    aspect ratio.
+  </div>
+
+  <div
+    style="text-align:center; font-family: 'Google Sans', sans-serif; font-size:20px;color:black;">
+    <a href="../index.html"><u>Back to project page</u></a>
+  </div>
+
+  <br>
+  <table id="myTable" class="cell-border compact stripe">
+    <thead>
+      <tr style="font-family: 'Google Sans', sans-serif; color: #000;">
+        <th>ID</th>
+        <th>Input bounded frames</th>
+        <th>Ours</th>
+        <th>Du et al.</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <div style="text-align:center;color:black;">0</a>
+        </td>
+        <td><img src="./data/view_bound/gif/campanile_0118_0114.gif"
+            rel:animated_src="./data/view_bound/gif/campanile_0118_0114.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source src="./data/view_bound/ours/campanile_0118_0114.mp4"
+              type="video/mp4">
+          </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/view_bound/WideBaseline_nvs/campanile_0118_0114.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="text-align:center;color:black;">1</a>
+        </td>
+        <td><img src="./data/view_bound/gif/campanile_0305_0298.gif"
+            rel:animated_src="./data/view_bound/gif/campanile_0305_0298.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source src="./data/view_bound/ours/campanile_0305_0298.mp4"
+              type="video/mp4">
+          </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/view_bound/WideBaseline_nvs/campanile_0305_0298.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="text-align:center;color:black;">2</a>
+        </td>
+        <td><img src="./data/view_bound/gif/room_00115_00110.gif"
+            rel:animated_src="./data/view_bound/gif/room_00115_00110.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source src="./data/view_bound/ours/room_00115_00110.mp4"
+              type="video/mp4">
+          </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/view_bound/WideBaseline_nvs/room_00115_00110.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="text-align:center;color:black;">3</a>
+        </td>
+        <td><img src="./data/view_bound/gif/room_875_618.gif"
+            rel:animated_src="./data/view_bound/gif/room_875_618.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source src="./data/view_bound/ours/room_875_618.mp4"
+              type="video/mp4">
+          </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source src="./data/view_bound/WideBaseline_nvs/room_875_618.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="text-align:center;color:black;">4</a>
+        </td>
+        <td><img src="./data/view_bound/gif/room_201_875.gif"
+            rel:animated_src="./data/view_bound/gif/room_201_875.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source src="./data/view_bound/ours/room_201_875.mp4"
+              type="video/mp4">
+          </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source src="./data/view_bound/WideBaseline_nvs/room_201_875.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="text-align:center;color:black;">5</a>
+        </td>
+        <td><img src="./data/view_bound/gif/playroom_DSC05673_DSC05674.gif"
+            rel:animated_src="./data/view_bound/gif/playroom_DSC05673_DSC05674.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source src="./data/view_bound/ours/playroom_DSC05673_DSC05674.mp4"
+              type="video/mp4">
+          </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/view_bound/WideBaseline_nvs/playroom_DSC05673_DSC05674.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="text-align:center;color:black;">6</a>
+        </td>
+        <td><img src="./data/view_bound/gif/playroom_DSC05586_DSC05587.gif"
+            rel:animated_src="./data/view_bound/gif/playroom_DSC05586_DSC05587.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source src="./data/view_bound/ours/playroom_DSC05586_DSC05587.mp4"
+              type="video/mp4">
+          </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/view_bound/WideBaseline_nvs/playroom_DSC05586_DSC05587.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="text-align:center;color:black;">7</a>
+        </td>
+        <td><img src="./data/view_bound/gif/room_00216_00206.gif"
+            rel:animated_src="./data/view_bound/gif/room_00216_00206.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source src="./data/view_bound/ours/room_00216_00206.mp4"
+              type="video/mp4">
+          </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/view_bound/WideBaseline_nvs/room_00216_00206.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="text-align:center;color:black;">8</a>
+        </td>
+        <td><img src="./data/view_bound/gif/room_00010_00018.gif"
+            rel:animated_src="./data/view_bound/gif/room_00010_00018.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source src="./data/view_bound/ours/room_00010_00018.mp4"
+              type="video/mp4">
+          </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/view_bound/WideBaseline_nvs/room_00010_00018.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="text-align:center;color:black;">9</a>
+        </td>
+        <td><img src="./data/view_bound/gif/garden_00107_00104.gif"
+            rel:animated_src="./data/view_bound/gif/garden_00107_00104.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source src="./data/view_bound/ours/garden_00107_00104.mp4"
+              type="video/mp4">
+          </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/view_bound/WideBaseline_nvs/garden_00107_00104.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="text-align:center;color:black;">10</a>
+        </td>
+        <td><img src="./data/view_bound/gif/garden_00006_00104.gif"
+            rel:animated_src="./data/view_bound/gif/garden_00006_00104.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source src="./data/view_bound/ours/garden_00006_00104.mp4"
+              type="video/mp4">
+          </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/view_bound/WideBaseline_nvs/garden_00006_00104.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+
+
+</html>

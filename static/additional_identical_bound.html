@@ -1,0 +1,647 @@
+<html>
+
+<head>
+  <script type="text/javascript" language="javascript"
+    src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+  <script type="text/javascript" language="javascript"
+    src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+  <script type="text/javascript" language="javascript"
+    src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.colVis.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+
+  <link
+    href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+  </link>
+  <style>
+    .plotly-graph-div {
+      margin: auto;
+    }
+
+    table {
+      background-color: white;
+      color: white;
+    }
+
+    table.dataTable.compact tbody th,
+    table.dataTable.compact tbody td {
+      padding: 4px;
+      background-color: black;
+    }
+
+    .dataTables_wrapper .dataTables_length,
+    .dataTables_wrapper .dataTables_filter,
+    .dataTables_wrapper .dataTables_info,
+    .dataTables_wrapper .dataTables_processing,
+    .dataTables_wrapper .dataTables_paginate {
+      color: #000000;
+    }
+
+    table.dataTable.cell-border tbody th,
+    table.dataTable.cell-border tbody td {
+      border-top: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+      border-bottom: 1px solid white;
+    }
+
+    table.dataTable thead td {
+      border-bottom: 1px solid #fff;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+      box-sizing: border-box;
+      display: inline-block;
+      min-width: 1.5em;
+      padding: 0.5em 1em;
+      margin-left: 2px;
+      text-align: center;
+      text-decoration: none !important;
+      cursor: pointer;
+      *cursor: hand;
+      color: #fff !important;
+      border: 1px solid transparent;
+      border-radius: 2px;
+    }
+  </style>
+
+</head>
+
+<body bgcolor='white'>
+  <hr>
+  <div
+    style="text-align:center; font-family: 'Google Sans', sans-serif; font-size:30px;color:black;">
+    Explorative Inbetweening of Time and Space <br> Additional results on
+    identical bound (video looping generation)</div><br>
+  <div
+    style="text-align:center; font-family: 'Google Sans', sans-serif; font-size:20px;color:black;">
+    <a href="../index.html"><u>Back to project page</u></a>
+  </div>
+  <table id="myTable" class="cell-border compact stripe">
+    <thead>
+      <tr style="font-family: 'Google Sans', sans-serif; color:#000000">
+        <th>Input bounded frames (identical frames)</th>
+        <th>Ours</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/fire_pexels-hakan-erenler-289770.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/fire_pexels-hakan-erenler-289770.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/physics_pexels-rdne-stock-project-8083432.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/physics_pexels-rdne-stock-project-8083432.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/fire_pexels-tairon-fernandez-450301.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/fire_pexels-tairon-fernandez-450301.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/wind_pexels-life-of-pix-7763.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/wind_pexels-life-of-pix-7763.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/city_shibuya.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source src="./data/identical_bound/additional/city_shibuya.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/crowd_pexels-annam-w-1047442.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/crowd_pexels-annam-w-1047442.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/animal_210602-doge-meme-nft-mb-1715-8afb7e.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/animal_210602-doge-meme-nft-mb-1715-8afb7e.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/animal_pexels-tamba-budiarsana-979247.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/animal_pexels-tamba-budiarsana-979247.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/animal_wolf.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source src="./data/identical_bound/additional/animal_wolf.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/wheels_pexels-flickr-149387.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/wheels_pexels-flickr-149387.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/hand-face_shutterstock_2036344166.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/hand-face_shutterstock_2036344166.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/city_pexels-aleksandar-pasaric-1245077.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/city_pexels-aleksandar-pasaric-1245077.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/crowd_pexels-sl-wong-950902.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/crowd_pexels-sl-wong-950902.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/water_pexels-cottonbro-studio-5415960.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/water_pexels-cottonbro-studio-5415960.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/playing_pexels-dmitry-demidov-3807838.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/playing_pexels-dmitry-demidov-3807838.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/city_pexels-isaw-company-1011160.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/city_pexels-isaw-company-1011160.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/wheels_pexels-daniel-fawcett-1404968.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/wheels_pexels-daniel-fawcett-1404968.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/playing_pexels-shvets-production-8929477.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/playing_pexels-shvets-production-8929477.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/fire_pexels-matthias-cooper-1325113.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/fire_pexels-matthias-cooper-1325113.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/rainfall_pexels-lisa-fotios-7302562.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/rainfall_pexels-lisa-fotios-7302562.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/wheels_pexels-amar-preciado-20025872.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/wheels_pexels-amar-preciado-20025872.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/fire_pexels-pixabay-161073.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/fire_pexels-pixabay-161073.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/animal_pexels-karen-boshoff-6441617.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/animal_pexels-karen-boshoff-6441617.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/playing_pexels-cottonbro-studio-10222167.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/playing_pexels-cottonbro-studio-10222167.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/playing_pexels-mikhail-nilov-7570124.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/playing_pexels-mikhail-nilov-7570124.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/crowd_pexels-adiprayogo-liemena-17263722.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/crowd_pexels-adiprayogo-liemena-17263722.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/wind_pexels-brett-sayles-921259.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/wind_pexels-brett-sayles-921259.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/playing_pexels-tima-miroshnichenko-5586418.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/playing_pexels-tima-miroshnichenko-5586418.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/fire_pexels-david-j-boozer-38712.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/fire_pexels-david-j-boozer-38712.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/fire_pexels-brett-sayles-1871130.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/fire_pexels-brett-sayles-1871130.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/playing_pexels-cottonbro-studio-4038322.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/playing_pexels-cottonbro-studio-4038322.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/playing_pexels-north-1407322.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/playing_pexels-north-1407322.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/water_pexels-pixabay-2438.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/water_pexels-pixabay-2438.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/hand-face_1_3367099.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/hand-face_1_3367099.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/wheels_pexels-pixabay-40547.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/wheels_pexels-pixabay-40547.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/rainfall_pexels-pixabay-459451.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/rainfall_pexels-pixabay-459451.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/playing_rick_dance.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/playing_rick_dance.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/water_pexels-phyo-hein-kyaw-2523644.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/water_pexels-phyo-hein-kyaw-2523644.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/fire_pexels-jazlyn-oliver-2798442.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/fire_pexels-jazlyn-oliver-2798442.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/wheels_pexels-cottonbro-studio-4551857.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/wheels_pexels-cottonbro-studio-4551857.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/wind_pexels-pixabay-39896.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/wind_pexels-pixabay-39896.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/fire_pexels-nastyasensei-282045.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/fire_pexels-nastyasensei-282045.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/rainfall_pexels-lisa-fotios-730256.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/rainfall_pexels-lisa-fotios-730256.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/city_pexels-wencheng-jiang-6635794.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/city_pexels-wencheng-jiang-6635794.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/fire_pexels-threeshots-714560.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/fire_pexels-threeshots-714560.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/wind_mondlandung_nasa.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/wind_mondlandung_nasa.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/hand-face_istockphoto-1323528520-612x612.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/hand-face_istockphoto-1323528520-612x612.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/city_pexels-kelly-3263125.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/city_pexels-kelly-3263125.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/rainfall_pexels-tatyana-8658800.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/rainfall_pexels-tatyana-8658800.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/city_pexels-nikolett-emmert-3341294.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/city_pexels-nikolett-emmert-3341294.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/animal_pexels-pixabay-57416.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/animal_pexels-pixabay-57416.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/hand-face_pexels-cottonbro-studio-4098345.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/hand-face_pexels-cottonbro-studio-4098345.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/wheels_pexels-karol-d-908494.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/wheels_pexels-karol-d-908494.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/wind_pexels-ingo-joseph-109629.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/wind_pexels-ingo-joseph-109629.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/identical_bound/additional_start_frame/crowd_pexels-michael-brennan-14591832.jpg"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/identical_bound/additional/crowd_pexels-michael-brennan-14591832.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+
+    </tbody>
+  </table>
+
+</body>
+
+
+</html>

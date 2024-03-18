@@ -1,0 +1,459 @@
+<html>
+
+<head>
+  <script type="text/javascript" language="javascript"
+    src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+  <script type="text/javascript" language="javascript"
+    src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+  <script type="text/javascript" language="javascript"
+    src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.colVis.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+
+  <link
+    href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+  </link>
+  <style>
+    .plotly-graph-div {
+      margin: auto;
+    }
+
+    table {
+      background-color: white;
+      color: white;
+    }
+
+    table.dataTable.compact tbody th,
+    table.dataTable.compact tbody td {
+      padding: 4px;
+      background-color: white;
+    }
+
+    .dataTables_wrapper .dataTables_length,
+    .dataTables_wrapper .dataTables_filter,
+    .dataTables_wrapper .dataTables_info,
+    .dataTables_wrapper .dataTables_processing,
+    .dataTables_wrapper .dataTables_paginate {
+      color: #fff;
+    }
+
+    table.dataTable.cell-border tbody th,
+    table.dataTable.cell-border tbody td {
+      border-top: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+      border-bottom: 1px solid white;
+    }
+
+    table.dataTable thead th,
+    table.dataTable thead td {
+      border-bottom: 1px solid #fff;
+    }
+
+    table.dataTable thead th,
+    table.dataTable thead td {
+      padding: 10px 18px;
+      border-bottom: 1px solid #fff;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+      box-sizing: border-box;
+      display: inline-block;
+      min-width: 1.5em;
+      padding: 0.5em 1em;
+      margin-left: 2px;
+      text-align: center;
+      text-decoration: none !important;
+      cursor: pointer;
+      *cursor: hand;
+      color: #fff !important;
+      border: 1px solid transparent;
+      border-radius: 2px;
+    }
+  </style>
+
+</head>
+
+<body bgcolor='white'>
+  <hr>
+  <div
+    style="text-align:center;font-family: 'Google Sans', sans-serif;  font-size:30px;color:black;">
+    Explorative Inbetweening of Time and Space <br> Baseline comparison on
+    dynamics bound (subject motion generation)</div><br>
+  <div
+    style="text-align:center; font-family: 'Google Sans', sans-serif; font-size:20px;color:black;">
+    <a href="../index.html"><u>Back to project page</u></a>
+  </div>
+  <table id="myTable" class="cell-border compact stripe">
+    <thead style="font-family: 'Google Sans', sans-serif; color: black;">
+      <tr>
+        <th>ID</th>
+        <th>Input bounded frames</th>
+        <th>Ours</th>
+        <th>FILM</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <div style="text-align:center;color:black;">0</a>
+        </td>
+        <td><img src="./data/dynamics_bound/gif/hair_clip2_00000_00010.gif"
+            rel:animated_src="./data/dynamics_bound/gif/hair_clip2_00000_00010.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source src="./data/dynamics_bound/ours/hair_clip2_00000_00010.mp4"
+              type="video/mp4">
+          </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/dynamics_bound/FILM-Net_dynamics/hair_clip2_00000_00010.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="text-align:center;color:black;">1</a>
+        </td>
+        <td><img src="./data/dynamics_bound/gif/gatsby_clip1_00189_00140.gif"
+            rel:animated_src="./data/dynamics_bound/gif/gatsby_clip1_00189_00140.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/dynamics_bound/ours/gatsby_clip1_00189_00140.mp4"
+              type="video/mp4">
+          </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/dynamics_bound/FILM-Net_dynamics/gatsby_clip1_00189_00140.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="text-align:center;color:black;">2</a>
+        </td>
+        <td><img src="./data/dynamics_bound/gif/full_body_clip1_00030_00010.gif"
+            rel:animated_src="./data/dynamics_bound/gif/full_body_clip1_00030_00010.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/dynamics_bound/ours/full_body_clip1_00030_00010.mp4"
+              type="video/mp4">
+          </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/dynamics_bound/FILM-Net_dynamics/full_body_clip1_00030_00010.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="text-align:center;color:black;">3</a>
+        </td>
+        <td><img src="./data/dynamics_bound/gif/stork_video_00035_00000.gif"
+            rel:animated_src="./data/dynamics_bound/gif/stork_video_00035_00000.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source src="./data/dynamics_bound/ours/stork_video_00035_00000.mp4"
+              type="video/mp4">
+          </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/dynamics_bound/FILM-Net_dynamics/stork_video_00035_00000.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="text-align:center;color:black;">4</a>
+        </td>
+        <td><img src="./data/dynamics_bound/gif/shibuya_clip4_00070_00000.gif"
+            rel:animated_src="./data/dynamics_bound/gif/shibuya_clip4_00070_00000.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/dynamics_bound/ours/shibuya_clip4_00070_00000.mp4"
+              type="video/mp4">
+          </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/dynamics_bound/FILM-Net_dynamics/shibuya_clip4_00070_00000.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="text-align:center;color:black;">5</a>
+        </td>
+        <td><img src="./data/dynamics_bound/gif/Obama_clip1_00137_00220.gif"
+            rel:animated_src="./data/dynamics_bound/gif/Obama_clip1_00137_00220.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source src="./data/dynamics_bound/ours/Obama_clip1_00137_00220.mp4"
+              type="video/mp4">
+          </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/dynamics_bound/FILM-Net_dynamics/Obama_clip1_00137_00220.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="text-align:center;color:black;">6</a>
+        </td>
+        <td><img src="./data/dynamics_bound/gif/tiffany_clip1_00051_00083.gif"
+            rel:animated_src="./data/dynamics_bound/gif/tiffany_clip1_00051_00083.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/dynamics_bound/ours/tiffany_clip1_00051_00083.mp4"
+              type="video/mp4">
+          </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/dynamics_bound/FILM-Net_dynamics/tiffany_clip1_00051_00083.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="text-align:center;color:black;">7</a>
+        </td>
+        <td><img src="./data/dynamics_bound/gif/re10k_008_gt_00000_00006.gif"
+            rel:animated_src="./data/dynamics_bound/gif/re10k_008_gt_00000_00006.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/dynamics_bound/ours/re10k_008_gt_00000_00006.mp4"
+              type="video/mp4">
+          </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/dynamics_bound/FILM-Net_dynamics/re10k_008_gt_00000_00006.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="text-align:center;color:black;">8</a>
+        </td>
+        <td><img src="./data/dynamics_bound/gif/back_clip1_00100_00130.gif"
+            rel:animated_src="./data/dynamics_bound/gif/back_clip1_00100_00130.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source src="./data/dynamics_bound/ours/back_clip1_00100_00130.mp4"
+              type="video/mp4">
+          </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/dynamics_bound/FILM-Net_dynamics/back_clip1_00100_00130.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="text-align:center;color:black;">9</a>
+        </td>
+        <td><img src="./data/dynamics_bound/gif/rick_clip1_00015_00035.gif"
+            rel:animated_src="./data/dynamics_bound/gif/rick_clip1_00015_00035.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source src="./data/dynamics_bound/ours/rick_clip1_00015_00035.mp4"
+              type="video/mp4">
+          </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/dynamics_bound/FILM-Net_dynamics/rick_clip1_00015_00035.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="text-align:center;color:black;">10</a>
+        </td>
+        <td><img src="./data/dynamics_bound/gif/swan_clip1_00055_00078.gif"
+            rel:animated_src="./data/dynamics_bound/gif/swan_clip1_00055_00078.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source src="./data/dynamics_bound/ours/swan_clip1_00055_00078.mp4"
+              type="video/mp4">
+          </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/dynamics_bound/FILM-Net_dynamics/swan_clip1_00055_00078.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="text-align:center;color:black;">11</a>
+        </td>
+        <td><img src="./data/dynamics_bound/gif/Trevor_clip2_00235_00227.gif"
+            rel:animated_src="./data/dynamics_bound/gif/Trevor_clip2_00235_00227.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/dynamics_bound/ours/Trevor_clip2_00235_00227.mp4"
+              type="video/mp4">
+          </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/dynamics_bound/FILM-Net_dynamics/Trevor_clip2_00235_00227.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="text-align:center;color:black;">12</a>
+        </td>
+        <td><img src="./data/dynamics_bound/gif/tiffany_clip2_00000_00032.gif"
+            rel:animated_src="./data/dynamics_bound/gif/tiffany_clip2_00000_00032.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/dynamics_bound/ours/tiffany_clip2_00000_00032.mp4"
+              type="video/mp4">
+          </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/dynamics_bound/FILM-Net_dynamics/tiffany_clip2_00000_00032.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="text-align:center;color:black;">13</a>
+        </td>
+        <td><img src="./data/dynamics_bound/gif/Obama_clip2_00188_00122.gif"
+            rel:animated_src="./data/dynamics_bound/gif/Obama_clip2_00188_00122.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source src="./data/dynamics_bound/ours/Obama_clip2_00188_00122.mp4"
+              type="video/mp4">
+          </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/dynamics_bound/FILM-Net_dynamics/Obama_clip2_00188_00122.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="text-align:center;color:black;">14</a>
+        </td>
+        <td><img src="./data/dynamics_bound/gif/shibuya_clip3_00037_00066.gif"
+            rel:animated_src="./data/dynamics_bound/gif/shibuya_clip3_00037_00066.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/dynamics_bound/ours/shibuya_clip3_00037_00066.mp4"
+              type="video/mp4">
+          </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/dynamics_bound/FILM-Net_dynamics/shibuya_clip3_00037_00066.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="text-align:center;color:black;">15</a>
+        </td>
+        <td><img src="./data/dynamics_bound/gif/squat_clip1_00000_00049.gif"
+            rel:animated_src="./data/dynamics_bound/gif/squat_clip1_00000_00049.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source src="./data/dynamics_bound/ours/squat_clip1_00000_00049.mp4"
+              type="video/mp4">
+          </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/dynamics_bound/FILM-Net_dynamics/squat_clip1_00000_00049.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="text-align:center;color:black;">16</a>
+        </td>
+        <td><img src="./data/dynamics_bound/gif/arm_clip1_00018_00060.gif"
+            rel:animated_src="./data/dynamics_bound/gif/arm_clip1_00018_00060.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source src="./data/dynamics_bound/ours/arm_clip1_00018_00060.mp4"
+              type="video/mp4">
+          </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/dynamics_bound/FILM-Net_dynamics/arm_clip1_00018_00060.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="text-align:center;color:black;">17</a>
+        </td>
+        <td><img src="./data/dynamics_bound/gif/waterfall_clip1_00000_00180.gif"
+            rel:animated_src="./data/dynamics_bound/gif/waterfall_clip1_00000_00180.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/dynamics_bound/ours/waterfall_clip1_00000_00180.mp4"
+              type="video/mp4">
+          </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/dynamics_bound/FILM-Net_dynamics/waterfall_clip1_00000_00180.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td>
+          <div style="text-align:center;color:black;">18</a>
+        </td>
+        <td><img src="./data/dynamics_bound/gif/rick_clip2_00077_00103.gif"
+            rel:animated_src="./data/dynamics_bound/gif/rick_clip2_00077_00103.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source src="./data/dynamics_bound/ours/rick_clip2_00077_00103.mp4"
+              type="video/mp4">
+          </video></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/dynamics_bound/FILM-Net_dynamics/rick_clip2_00077_00103.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+
+    </tbody>
+  </table>
+
+</body>
+
+
+</html>

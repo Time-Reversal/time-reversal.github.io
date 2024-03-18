@@ -1,0 +1,185 @@
+<html>
+
+<head>
+  <script type="text/javascript" language="javascript"
+    src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+  <script type="text/javascript" language="javascript"
+    src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+  <script type="text/javascript" language="javascript"
+    src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.colVis.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+
+  <link
+    href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+  </link>
+  <style>
+    .plotly-graph-div {
+      margin: auto;
+    }
+
+    table {
+      background-color: white;
+      color: white;
+    }
+
+    table.dataTable.compact tbody th,
+    table.dataTable.compact tbody td {
+      padding: 4px;
+      background-color: white;
+    }
+
+    .dataTables_wrapper .dataTables_length,
+    .dataTables_wrapper .dataTables_filter,
+    .dataTables_wrapper .dataTables_info,
+    .dataTables_wrapper .dataTables_processing,
+    .dataTables_wrapper .dataTables_paginate {
+      color: #fff;
+    }
+
+    table.dataTable.cell-border tbody th,
+    table.dataTable.cell-border tbody td {
+      border-top: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+      border-bottom: 1px solid white;
+    }
+
+    table.dataTable thead th,
+    table.dataTable thead td {
+      border-bottom: 1px solid #fff;
+    }
+
+    table.dataTable thead th,
+    table.dataTable thead td {
+      padding: 10px 18px;
+      border-bottom: 1px solid #fff;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+      box-sizing: border-box;
+      display: inline-block;
+      min-width: 1.5em;
+      padding: 0.5em 1em;
+      margin-left: 2px;
+      text-align: center;
+      text-decoration: none !important;
+      cursor: pointer;
+      *cursor: hand;
+      color: #fff !important;
+      border: 1px solid transparent;
+      border-radius: 2px;
+    }
+  </style>
+
+</head>
+
+<body bgcolor='white'>
+  <hr>
+  <div
+    style="text-align:center; font-family: 'Google Sans', sans-serif; font-size:30px;color:black;">
+    Explorative Inbetweening of Time and Space <br> Additional results on view
+    bound (camera motion generation)</div><br>
+  <div
+    style="text-align:center; font-family: 'Google Sans', sans-serif; font-size:20px;color:black;">
+    <a href="../index.html"><u>Back to project page</u></a>
+  </div>
+  <table id="myTable" class="cell-border compact stripe">
+    <thead style="font-family: 'Google Sans', sans-serif; color: black;">
+      <tr>
+        <th>Input bounded frames</th>
+        <th>Ours</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><img
+            src="./data/view_bound/additional_gif/dolomite_clip3_00000_00100.gif"
+            rel:animated_src="./data/view_bound/additional_gif/dolomite_clip3_00000_00100.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/view_bound/additional/dolomite_clip3_00000_00100.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/view_bound/additional_gif/DJI_clip1_00000_00057.gif"
+            rel:animated_src="./data/view_bound/additional_gif/DJI_clip1_00000_00057.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source src="./data/view_bound/additional/DJI_clip1_00000_00057.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/view_bound/additional_gif/re10k_008_gt_fps7_0-1_same_noise_Euler-100_TR_b.gif"
+            rel:animated_src="./data/view_bound/additional_gif/re10k_008_gt_fps7_0-1_same_noise_Euler-100_TR_b.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/view_bound/additional/re10k_008_gt_fps7_0-1_same_noise_Euler-100_TR_b.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/view_bound/additional_gif/re10k_026_gt_fps7_2-3_same_noise_Euler-100_TR_b.gif"
+            rel:animated_src="./data/view_bound/additional_gif/re10k_026_gt_fps7_2-3_same_noise_Euler-100_TR_b.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/view_bound/additional/re10k_026_gt_fps7_2-3_same_noise_Euler-100_TR_b.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img src="./data/view_bound/additional_gif/counter_00018_00023.gif"
+            rel:animated_src="./data/view_bound/additional_gif/counter_00018_00023.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source src="./data/view_bound/additional/counter_00018_00023.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img
+            src="./data/view_bound/additional_gif/Reef_clip1_00201_00335.gif"
+            rel:animated_src="./data/view_bound/additional_gif/Reef_clip1_00201_00335.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source
+              src="./data/view_bound/additional/Reef_clip1_00201_00335.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+      <tr>
+        <td><img src="./data/view_bound/additional_gif/scan65_000027_000032.gif"
+            rel:animated_src="./data/view_bound/additional_gif/scan65_000027_000032.gif"
+            rel:auto_play="1" rel:rubbable="1"
+            style="max-width:100%;height:auto;"></td>
+        <td><video width="100%" loop autoplay laysinline muted>
+            <source src="./data/view_bound/additional/scan65_000027_000032.mp4"
+              type="video/mp4">
+          </video></td>
+      </tr>
+
+    </tbody>
+  </table>
+
+</body>
+
+
+</html>

@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Explorative Inbetweening of Time and Space">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Explorative Inbetweening of Time and Space</title>
+
+  <link
+    href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu"
+        aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  </nav>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Explorative Inbetweening of
+              Time and Space
+              <br>
+
+            </h1>
+            <h2 style="font-size: 19px;"><em>Enabling <strong>bounded
+                  generation</strong> of a pre-trained image-to-video model<br>
+                <strong>without any tuning and optimization</strong></em></h2>
+            <br>
+            <div class="publication-authors" style="font-size: 19px;">
+              <span class="author-block">
+                <a href="https://ps.is.mpg.de/person/hfeng">Haiwen
+                  Feng</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="">Zheng Ding</a><sup>3</sup>,</span>
+              <span class="author-block">
+                <a href="https://likesum.github.io/">Zhihao Xia</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://sniklaus.com/">Simon Niklaus</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://is.mpg.de/~vabrevaya">Victoria
+                  Abrevaya</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://ps.is.mpg.de/person/black">Michael J.
+                  Black</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://people.eecs.berkeley.edu/~cecilia77">Xuaner
+                  Zhang</a><sup>2</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Max Planck Institute for
+                Intelligent Systems, Tuebingen, Germany</span><br>
+              <span class="author-block"><sup>2</sup>Adobe</span>&nbsp;&nbsp;
+              <span class="author-block"><sup>3</sup>University of California
+                San Diego</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="./static/preprint.pdf"
+                    class="external-link button is-normal is-rounded is-dark"
+                    target="_blank">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href=""
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Video Link. -->
+                <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href=""
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (Coming Soon)</span>
+                  </a>
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="columns is-centered">
+      <div class="column is-7">
+        <img src="static/images/teaser_4_reduced.png">
+
+        <h2 class="subtitle has-text-justified" style="font-size:18px;">
+          Bounded generation in three scenarios: 1) Generating subject motion
+          with the two bound images capturing a moving subject. 2) Synthesizing
+          camera motion using two images captured from different viewpoints of a
+          static scene. 3) Achieving video looping by using the same image for
+          both bounds. We propose a new sampling strategy, called Time Reversal
+          Fusion, to preserve the inherent generalization of an image-to-video
+          model while steering the video generation towards an exact ending
+          frame.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <br>
+  <br>
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-11">
+            <h2 class="title is-3">Identical Bound (Video Looping, Cinemagraph)
+            </h2>
+            <p>
+              Top row: Two input frames. Bottom row: Our generated results.
+              <a href="static/additional_identical_bound.html">More
+                results</a>
+            </p>
+            <div id=" results-carousel" class="carousel results-carousel">
+              <div class="item">
+                <img
+                  src="static/data/identical_bound/additional_start_frame/fire_pexels-tairon-fernandez-450301.jpg"
+                  class="teaser_img">
+                <video autoplay loop muted class="teaser_img">
+                  <source
+                    src="static/data/identical_bound/additional/fire_pexels-tairon-fernandez-450301.mp4"
+                    type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div class="item">
+                <img
+                  src="static/data/identical_bound/additional_start_frame/animal_210602-doge-meme-nft-mb-1715-8afb7e.jpg"
+                  class="teaser_img">
+                <video autoplay loop muted class="teaser_img">
+                  <source
+                    src="static/data/identical_bound/additional/animal_210602-doge-meme-nft-mb-1715-8afb7e.mp4"
+                    type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div class="item">
+                <img
+                  src="static/data/identical_bound/additional_start_frame/city_shibuya.jpg"
+                  class="teaser_img">
+                <video autoplay loop muted class="teaser_img">
+                  <source
+                    src="static/data/identical_bound/additional/city_shibuya.mp4"
+                    type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div class="item">
+                <img
+                  src="static/data/identical_bound/additional_start_frame/wheels_pexels-daniel-fawcett-1404968.jpg"
+                  class="teaser_img">
+                <video autoplay loop muted class="teaser_img">
+                  <source
+                    src="static/data/identical_bound/additional/wheels_pexels-daniel-fawcett-1404968.mp4"
+                    type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div class="item">
+                <img
+                  src="static/data/identical_bound/additional_start_frame/fire_pexels-jazlyn-oliver-2798442.jpg"
+                  class="teaser_img">
+                <video autoplay loop muted class="teaser_img">
+                  <source
+                    src="static/data/identical_bound/additional/fire_pexels-jazlyn-oliver-2798442.mp4"
+                    type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-11">
+            <h2 class="title is-3">View Bounds (Camera Motion Generation) </h2>
+            <p>
+              Top row: Two input frames. Bottom row: Our generated results.
+              <a href="static/additional_view_bound.html">More
+                results</a>
+            </p>
+            <div id=" results-carousel" class="carousel results-carousel">
+              <div class="item">
+                <img
+                  src="static/data/view_bound/additional_gif/dolomite_clip3_00000_00100.gif"
+                  class="teaser_img">
+                <video autoplay loop muted class="teaser_img">
+                  <source
+                    src="static/data/view_bound/additional/dolomite_clip3_00000_00100.mp4"
+                    type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div class="item">
+                <img
+                  src="static/data/view_bound/additional_gif/DJI_clip1_00000_00057.gif"
+                  class="teaser_img">
+                <video autoplay loop muted class="teaser_img">
+                  <source
+                    src="static/data/view_bound/additional/DJI_clip1_00000_00057.mp4"
+                    type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div class="item">
+                <img
+                  src="static/data/view_bound/additional_gif/re10k_008_gt_fps7_0-1_same_noise_Euler-100_TR_b.gif"
+                  class="teaser_img">
+                <video autoplay loop muted class="teaser_img">
+                  <source
+                    src="static/data/view_bound/additional/re10k_008_gt_fps7_0-1_same_noise_Euler-100_TR_b.mp4"
+                    type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div class="item">
+                <img
+                  src="static/data/view_bound/additional_gif/scan65_000027_000032.gif"
+                  class="teaser_img">
+                <video autoplay loop muted class="teaser_img">
+                  <source
+                    src="static/data/view_bound/additional/scan65_000027_000032.mp4"
+                    type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div class="item">
+                <img src="static/data/view_bound/gif/room_00010_00018.gif"
+                  class="teaser_img">
+                <video autoplay loop muted class="teaser_img">
+                  <source src="static/data/view_bound/ours/room_00010_00018.mp4"
+                    type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div class="item">
+                <img src="static/data/view_bound/gif/garden_00006_00104.gif"
+                  class="teaser_img">
+                <video autoplay loop muted class="teaser_img">
+                  <source
+                    src="static/data/view_bound/ours/garden_00006_00104.mp4"
+                    type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-11">
+            <h2 class="title is-3">Dynamic Bounds (Subject / Scene Motion
+              Generation)
+            </h2>
+            <p>Top row: Two input frames. Bottom row: Our generated results.</p>
+            <div id="results-carousel" class="carousel results-carousel">
+              <div class="item">
+                <img src="static/data/others/gif/back_clip4_00032_00050.gif"
+                  class="teaser_img">
+                <video autoplay loop muted class="teaser_img">
+                  <source
+                    src="static/data/others/ours/back_clip4_00032_00050.mp4"
+                    type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div class="item">
+                <img src="static/data/others/gif/cat_clip1_00000_00072.gif"
+                  class="teaser_img">
+                <video autoplay loop muted class="teaser_img">
+                  <source
+                    src="static/data/others/ours/cat_clip1_00000_00072.mp4"
+                    type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div class="item">
+                <img
+                  src="static/data/dynamics_bound/gif/shibuya_clip4_00070_00000.gif"
+                  class="teaser_img">
+                <video autoplay loop muted class="teaser_img">
+                  <source
+                    src="static/data/dynamics_bound/ours/shibuya_clip4_00070_00000.mp4"
+                    type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div class="item">
+                <img
+                  src="static/data/dynamics_bound/gif/tiffany_clip2_00000_00032.gif"
+                  class="teaser_img">
+                <video autoplay loop muted class="teaser_img">
+                  <source
+                    src="static/data/dynamics_bound/ours/tiffany_clip2_00000_00032.mp4"
+                    type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div class="item">
+                <img
+                  src="static/data/dynamics_bound/gif/stork_video_00035_00000.gif"
+                  class="teaser_img">
+                <video autoplay loop muted class="teaser_img">
+                  <source
+                    src="static/data/dynamics_bound/ours/stork_video_00035_00000.mp4"
+                    type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="pcontainer">
+        <div class="pcolumn">
+          <h3 class="title is-3 is-centered has-text-centered">Abstract</h3>
+          <p>We introduce bounded generation as a generalized task to control
+            video generation to synthesize arbitrary camera and subject motion
+            based only on a given start and end frame. Our objective is to fully
+            leverage the inherent generalization capability of an image-to-video
+            model without additional training or fine-tuning of the original
+            model. This is achieved through the proposed new sampling strategy,
+            which we call Time Reversal Fusion, that fuses the temporally
+            forward and backward denoising paths conditioned on the start and
+            end frame, respectively. The fused path results in a video that
+            smoothly connects the two frames, generating inbetweening of
+            faithful subject motion, novel views of static scenes, and seamless
+            video looping when the two bounding frames are identical. We curate
+            a diverse evaluation dataset of image pairs and compare against the
+            closest existing methods. We find that Time Reversal Fusion
+            outperforms related work on all subtasks, exhibiting the ability to
+            generate complex motions and 3D-consistent views guided by bounded
+            frames.
+          </p>
+        </div>
+        <div class="pcolumn">
+          <h3 class="title is-3 is-centered has-text-centered">Method</h3>
+          <img src="static/images/pipeline.png">
+        </div>
+      </div>
+    </div>
+
+
+    <section class="hero is-small">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-11">
+              <h2 class="title is-3">Comparison</h2>
+
+              <h3 class="is-centered has-text-centered">Identical Bound: Input
+                (left), Text2cinemagraph (middle), Ours (right). <a
+                  href="static/comparison_identical_bound.html">More
+                  Comparisons</a></h3>
+              <div class="pcontainer">
+
+                <div class="pcolumn">
+                  <img
+                    src="static/data/identical_bound/start_frame/01008_00000_input.jpg"
+                    class="teaser_img">
+                </div>
+                <div class="pcolumn">
+                  <video autoplay loop muted class="teaser_img">
+                    <source
+                      src="static/data/identical_bound/t2c_eulerian/01008_00000_input.mp4"
+                      type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                <div class="pcolumn">
+                  <video autoplay loop muted class="teaser_img">
+                    <source
+                      src="static/data/identical_bound/ours/01008_00000_input.mp4"
+                      type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+
+              <h3 class="is-centered has-text-centered">View Bound: Input
+                (left), Du et al. (middle), Ours (right). <a
+                  href="static/comparison_view_bound.html">More Comparisons</a>
+              </h3>
+              <div class="pcontainer">
+
+                <div class="pcolumn">
+                  <img
+                    src="static/data/view_bound/gif/playroom_DSC05673_DSC05674.gif"
+                    class="teaser_img">
+                </div>
+                <div class="pcolumn">
+                  <video autoplay loop muted class="teaser_img">
+                    <source
+                      src="static/data/view_bound/WideBaseline_nvs/playroom_DSC05673_DSC05674.mp4"
+                      type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                <div class="pcolumn">
+                  <video autoplay loop muted class="teaser_img">
+                    <source
+                      src="static/data/view_bound/ours/playroom_DSC05673_DSC05674.mp4"
+                      type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+
+              <p class="is-centered has-text-centered">Dynamics Bound: Input
+                (left), FILM-Net (middle), Ours (right). <a
+                  href="static/comparison_dynamics_bound.html">More
+                  Comparisons</a></p>
+              <div class="pcontainer">
+                <div class="pcolumn">
+                  <img
+                    src="static/data/dynamics_bound/gif/full_body_clip1_00030_00010.gif"
+                    class="teaser_img">
+                </div>
+                <div class="pcolumn">
+                  <video autoplay loop muted class="teaser_img">
+                    <source
+                      src="static/data/dynamics_bound/FILM-Net_dynamics/full_body_clip1_00030_00010.mp4"
+                      type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                <div class="pcolumn">
+                  <video autoplay loop muted class="teaser_img">
+                    <source
+                      src="static/data/dynamics_bound/ours/full_body_clip1_00030_00010.mp4"
+                      type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <h2 class="title is-3">BibTeX</h2>
+        <pre><code>@article{feng2024explorative,
+      title={Explorative Inbetweening of Time and Space},
+      author={Haiwen Feng, Zheng Ding, Zhihao Xia, Simon Niklaus, Victoria Abrevaya, Michael Black, Xuaner Zhang},
+      journal={arXiv}
+      year={2024}
+    }</code></pre>
+      </div>
+    </section> -->
+
+
+    <footer class="footer">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="content">
+              <p>
+                This website is licensed under a <a rel="license"
+                  href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                  Commons Attribution-ShareAlike 4.0 International License</a>.
+              </p>
+              <p>
+                This website's source code is borrowed from the <a
+                  href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>
+                project page.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+</body>
+
+</html>
